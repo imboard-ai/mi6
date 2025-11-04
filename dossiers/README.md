@@ -59,15 +59,29 @@ to initialize this project"
 
 ## Available Dossiers
 
-### Core Dossiers
+### Citizen Journey Dossiers
+
+**For new projects (greenfield)**:
+| Dossier | Purpose | When to Use |
+|---------|---------|-------------|
+| **greenfield-start.md** | Start brand new project from zero | Absolute beginning - no directory yet |
+| **project-init.md** | Initialize MI6 structure | After directory/repos created |
+| **dependency-install.md** | Install all dependencies | After MI6 initialization |
+| **first-dev-session.md** | First productive dev session | Ready to start coding |
+
+**For existing projects (brownfield)**:
+| Dossier | Purpose | When to Use |
+|---------|---------|-------------|
+| **brownfield-adoption.md** | Add MI6 to existing project safely | Have existing code, want MI6 benefits |
+| **project-uninstall.md** | Remove MI6 if adoption fails | MI6 didn't work out, need clean removal |
+
+### Feature Dossiers
 
 | Dossier | Purpose | When to Use |
 |---------|---------|-------------|
-| **project-init.md** | Initialize new MI6 project | Starting a new project |
 | **worktree-multi-repo.md** | Set up multi-repo worktrees | Working on features across multiple repos |
 | **worktree-cleanup.md** | Remove worktrees safely | Completing/abandoning feature work |
 | **task-create.md** | Create new task document | Starting new work that needs documentation |
-| **config-optimize.md** | Improve .ai-project.json | Existing project needs better configuration (coming soon) |
 
 ### Community Dossiers
 
