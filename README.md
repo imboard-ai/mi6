@@ -104,10 +104,15 @@ curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/scripts/task-man
 | Milestone | Status | Description |
 |------------|--------|-------------|
 | Core repo structure & license | ✅ Done | Public release under BSL 1.1 |
-| Template system | 🚧 In progress | Configurable `.ai-project.json` scaffolds |
-| CLI utilities | 🧩 Planned | Lightweight Node CLI for agent workflow automation |
+| Environment setup system | ✅ Done | MI6_PATH configuration with auto-detection |
+| Template system | ✅ Done | Complete templates for multi-repo, mono-repo, and single-repo projects |
+| Task lifecycle management | ✅ Done | Automated task transitions with git integration |
+| Workflow documentation | ✅ Done | Task lifecycle and git worktree patterns |
+| Validation scripts | ✅ Done | Git performance benchmarking |
+| Worktree automation scripts | 🧩 Planned | Multi-repo worktree creation and cleanup |
+| Prompt library | 🧩 Planned | Curated AI assistant prompts for common tasks |
 | Integration examples | 🧩 Planned | Examples with Claude, Cursor, and Copilot |
-| Community templates | 🧩 Planned | Shared workflows and prompt libraries |
+| Community templates | 🧩 Planned | User-contributed workflows and patterns |
 
 ---
 
