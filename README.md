@@ -99,6 +99,45 @@ curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/scripts/task-man
 
 ---
 
+## 🤖 Agentic Automation (Dossiers)
+
+MI6 leverages the fact that users have access to LLM agents. Instead of complex scripts, MI6 provides **dossiers** - intelligent instruction sets that AI agents execute.
+
+### What Are Dossiers?
+
+Dossiers are structured markdown files that tell LLM agents (Claude, GPT-4, Cursor, Copilot) exactly how to automate complex tasks intelligently.
+
+**Example**:
+```
+"Use the MI6 project-init dossier to set up this directory"
+```
+
+The AI agent reads `$MI6_PATH/dossiers/project-init.md` and:
+- Detects your project structure (single/multi/mono repo)
+- Identifies tech stack (Node.js, Python, Go, etc.)
+- Copies and customizes all templates
+- Sets up task management
+- Initializes everything perfectly
+
+### Available Dossiers
+
+| Dossier | Purpose |
+|---------|---------|
+| **project-init.md** | Initialize new MI6 project (replaces complex setup wizard) |
+| **worktree-multi-repo.md** | Create linked worktrees across multiple repos |
+| **task-create.md** | Generate structured task documents |
+
+📚 **Learn more**: [dossiers/README.md](./dossiers/README.md)
+
+### Why Dossiers?
+
+- ✅ **Adaptive**: LLMs understand your project context
+- ✅ **Simpler**: Markdown instructions vs complex shell scripts
+- ✅ **Powerful**: Handles edge cases through intelligence
+- ✅ **Extensible**: Anyone can write dossiers
+
+---
+
 ## 🗺️ Roadmap
 
 | Milestone | Status | Description |
@@ -109,10 +148,11 @@ curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/scripts/task-man
 | Task lifecycle management | ✅ Done | Automated task transitions with git integration |
 | Workflow documentation | ✅ Done | Task lifecycle and git worktree patterns |
 | Validation scripts | ✅ Done | Git performance benchmarking |
-| Worktree automation scripts | 🧩 Planned | Multi-repo worktree creation and cleanup |
-| Prompt library | 🧩 Planned | Curated AI assistant prompts for common tasks |
-| Integration examples | 🧩 Planned | Examples with Claude, Cursor, and Copilot |
-| Community templates | 🧩 Planned | User-contributed workflows and patterns |
+| **Agentic Dossier System** | ✅ Done | LLM-powered automation for project setup, worktrees, and tasks |
+| Worktree cleanup dossier | 🧩 Planned | Automated worktree cleanup guidance |
+| Config optimization dossier | 🧩 Planned | Intelligent .ai-project.json improvements |
+| Integration examples | 🧩 Planned | Real-world examples with Claude, Cursor, and Copilot |
+| Community dossiers | 🧩 Planned | User-contributed automation patterns |
 
 ---
 
