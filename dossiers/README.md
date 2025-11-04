@@ -65,8 +65,9 @@ to initialize this project"
 |---------|---------|-------------|
 | **project-init.md** | Initialize new MI6 project | Starting a new project |
 | **worktree-multi-repo.md** | Set up multi-repo worktrees | Working on features across multiple repos |
+| **worktree-cleanup.md** | Remove worktrees safely | Completing/abandoning feature work |
 | **task-create.md** | Create new task document | Starting new work that needs documentation |
-| **config-optimize.md** | Improve .ai-project.json | Existing project needs better configuration |
+| **config-optimize.md** | Improve .ai-project.json | Existing project needs better configuration (coming soon) |
 
 ### Community Dossiers
 

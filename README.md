@@ -148,8 +148,7 @@ The AI agent reads `$MI6_PATH/dossiers/project-init.md` and:
 | Task lifecycle management | ✅ Done | Automated task transitions with git integration |
 | Workflow documentation | ✅ Done | Task lifecycle and git worktree patterns |
 | Validation scripts | ✅ Done | Git performance benchmarking |
-| **Agentic Dossier System** | ✅ Done | LLM-powered automation for project setup, worktrees, and tasks |
-| Worktree cleanup dossier | 🧩 Planned | Automated worktree cleanup guidance |
+| **Agentic Dossier System** | ✅ Done | LLM-powered automation for project setup, worktrees, tasks, and cleanup |
 | Config optimization dossier | 🧩 Planned | Intelligent .ai-project.json improvements |
 | Integration examples | 🧩 Planned | Real-world examples with Claude, Cursor, and Copilot |
 | Community dossiers | 🧩 Planned | User-contributed automation patterns |
@@ -186,7 +185,7 @@ MI6 is part of ImBoard’s commitment to open infrastructure for AI-driven colla
 
 ### 🧠 Motto
 
-> “Agents need structure. MI6 provides it.”
+> "MI6: Keeping agents from going rogue"
 
 ---
 
