@@ -125,9 +125,29 @@ The AI agent reads `$MI6_PATH/dossiers/project-init.md` and:
 |---------|---------|
 | **project-init.md** | Initialize new MI6 project (replaces complex setup wizard) |
 | **worktree-multi-repo.md** | Create linked worktrees across multiple repos |
+| **worktree-cleanup.md** | Safely remove worktrees when feature work is complete |
 | **task-create.md** | Generate structured task documents |
 
 📚 **Learn more**: [dossiers/README.md](./dossiers/README.md)
+
+### Worktree Scripts (Hybrid Automation)
+
+For fast deterministic execution, MI6 also provides traditional shell scripts:
+
+| Script | Purpose |
+|--------|---------|
+| **create-feature-worktree.sh** | Create worktrees (reads `.ai-project.json`) |
+| **list-worktrees.sh** | Show all active worktrees with status |
+| **cleanup-worktree.sh** | Remove worktrees safely |
+
+```bash
+# Quick worktree workflow
+$MI6_PATH/scripts/worktree/create-feature-worktree.sh my-feature
+$MI6_PATH/scripts/worktree/list-worktrees.sh
+$MI6_PATH/scripts/worktree/cleanup-worktree.sh my-feature
+```
+
+📚 **Learn more**: [scripts/worktree/README.md](./scripts/worktree/README.md)
 
 ### Why Dossiers?
 
@@ -149,6 +169,7 @@ The AI agent reads `$MI6_PATH/dossiers/project-init.md` and:
 | Workflow documentation | ✅ Done | Task lifecycle and git worktree patterns |
 | Validation scripts | ✅ Done | Git performance benchmarking |
 | **Agentic Dossier System** | ✅ Done | LLM-powered automation for project setup, worktrees, tasks, and cleanup |
+| **Worktree Shell Scripts** | ✅ Done | Fast deterministic worktree creation, listing, and cleanup |
 | Config optimization dossier | 🧩 Planned | Intelligent .ai-project.json improvements |
 | Integration examples | 🧩 Planned | Real-world examples with Claude, Cursor, and Copilot |
 | Community dossiers | 🧩 Planned | User-contributed automation patterns |
