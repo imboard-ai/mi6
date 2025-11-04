@@ -47,21 +47,55 @@ MI6 introduces **a layer of discipline**: a standardized way to manage context, 
 
 ## ⚙️ Quick Start
 
+MI6 supports two user profiles:
+
+### 🛠️ MI6-Operator (Contributors)
+
+**For those developing MI6 itself:**
+
 ```bash
-# Clone the MI6 framework
-git clone https://github.com/imboard-ai/mi6.git
+# Clone the repository
+git clone https://github.com/imboard-ai/mi6.git ~/projects/mi6
 
-# Add environment variable for reuse
-export MI6_PATH="$HOME/projects/mi6"
+# Run environment setup
+cd ~/projects/mi6/scripts/admin
+./setup-env.sh
 
-# Copy base templates into a new project
-cp -R $MI6_PATH/templates/. my-new-project/
+# Reload your shell
+source ~/.bashrc  # or ~/.zshrc
 
-# Explore available workflows
-ls $MI6_PATH/workflows
+# Verify setup
+./verify-setup.sh
+
+# Start contributing!
 ```
 
-Use these assets to scaffold consistent, agent-friendly repos — or integrate MI6 scripts directly into your own toolchain.
+### 👤 MI6-Citizen (Users)
+
+**For those using MI6 in their projects:**
+
+**Option A - Local Installation** (recommended):
+```bash
+# Clone and setup
+git clone https://github.com/imboard-ai/mi6.git ~/projects/mi6
+cd ~/projects/mi6/scripts/admin && ./setup-env.sh
+source ~/.bashrc  # or ~/.zshrc
+
+# Use MI6 resources
+cp $MI6_PATH/templates/AI_GUIDE.md my-project/
+cp $MI6_PATH/templates/.ai-project.json my-project/
+```
+
+**Option B - Direct GitHub Reference** (no local clone):
+```bash
+# Download templates on-demand
+curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/templates/AI_GUIDE.md > AI_GUIDE.md
+
+# Use scripts directly
+curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/scripts/task-manager/task-manager.js | node -
+```
+
+📚 **Detailed setup guide**: [docs/environment-setup.md](./docs/environment-setup.md)
 
 ---
 
