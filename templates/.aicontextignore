@@ -1,0 +1,150 @@
+# .aicontextignore
+# Control what AI assistants see in your project
+# Similar to .gitignore, but for AI context management
+
+# ========================================
+# Task Management - Hide Non-Active Tasks
+# ========================================
+
+# Hide planned tasks (not started yet)
+tasks/planned/
+
+# Hide stashed tasks (paused work)
+tasks/stashed/
+
+# Hide completed tasks (archived)
+tasks/completed/
+
+# ========================================
+# Archives and Old Files
+# ========================================
+
+archive/
+archived-docs/
+*.archive.md
+*_OLD.md
+*_BACKUP.md
+*_DEPRECATED.md
+*.bak
+
+# ========================================
+# Build Artifacts and Dependencies
+# ========================================
+
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# ========================================
+# Temporary and Cache Files
+# ========================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.log
+.cache/
+
+# ========================================
+# Version Control
+# ========================================
+
+.git/
+.svn/
+.hg/
+
+# ========================================
+# Environment and Secrets
+# ========================================
+
+# Never expose secrets to AI!
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# ========================================
+# Test Results and Reports
+# ========================================
+
+test-results/
+playwright-report/
+tests/results/
+tests/reports/
+*.test-results.json
+
+# ========================================
+# IDE and Editor Files
+# ========================================
+
+.vscode/
+.idea/
+*.sublime-*
+.project
+
+# ========================================
+# Large Media Files
+# ========================================
+
+# AI doesn't need to see large binaries
+*.mp4
+*.mov
+*.avi
+*.pdf
+*.zip
+*.tar.gz
+*.dmg
+*.iso
+
+# ========================================
+# Nested Repositories (Multi-Repo Setup)
+# ========================================
+
+# If using multi-repo structure, ignore nested code repos
+# (Uncomment if applicable)
+# backend/
+# frontend/
+# shared-types/
+
+# ========================================
+# Project-Specific Exclusions
+# ========================================
+
+# Add your project-specific patterns below:
+
+# Example: Hide specific large documentation
+# docs/api-reference/  # Large auto-generated API docs
+
+# Example: Hide vendor/third-party code
+# vendor/
+# third-party/
+
+# ========================================
+# Notes
+# ========================================
+
+# This file helps AI assistants stay focused by:
+# 1. Hiding irrelevant historical context
+# 2. Preventing secrets exposure
+# 3. Excluding large files that waste tokens
+# 4. Focusing on active work (tasks/active/)
+#
+# Adjust patterns based on your project structure!

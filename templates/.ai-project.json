@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/imboard-ai/mi6/main/schemas/ai-project.schema.json",
+  "name": "project-name",
+  "description": "Brief description of your project",
+  "structure": "multi-repo",
+  "repos": [
+    {
+      "name": "backend",
+      "type": "backend",
+      "language": "typescript",
+      "framework": "express",
+      "tests": "jest",
+      "path": "./backend"
+    },
+    {
+      "name": "frontend",
+      "type": "frontend",
+      "language": "typescript",
+      "framework": "react-vite",
+      "tests": "playwright",
+      "path": "./frontend"
+    },
+    {
+      "name": "shared",
+      "type": "shared",
+      "language": "typescript",
+      "package": "@organization/shared-types",
+      "path": "./shared-types"
+    }
+  ],
+  "workflows": {
+    "worktree": "multi-repo-linked",
+    "testing": "parallel-per-repo",
+    "deployment": "backend-triggers-frontend"
+  },
+  "taskManagement": {
+    "enabled": true,
+    "autoCommit": true,
+    "taskFolders": {
+      "planned": "tasks/planned",
+      "active": "tasks/active",
+      "stashed": "tasks/stashed",
+      "completed": "tasks/completed"
+    }
+  },
+  "context": {
+    "alwaysInclude": [
+      "AI_GUIDE.md",
+      "README.md",
+      "core/**/*.md"
+    ],
+    "conditionalInclude": [
+      "tasks/active/**/*.md"
+    ],
+    "exclude": [
+      "tasks/planned/**",
+      "tasks/stashed/**",
+      "tasks/completed/**",
+      "node_modules/**",
+      ".git/**"
+    ]
+  },
+  "mi6": {
+    "version": "v1",
+    "features": [
+      "task-lifecycle",
+      "worktree-management",
+      "context-hygiene"
+    ]
+  }
+}

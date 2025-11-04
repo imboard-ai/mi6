@@ -1,0 +1,127 @@
+# .gitignore for MI6-managed project documentation repositories
+# Use this template when your project root is a docs repo with nested code repos
+
+# ========================================
+# Nested Code Repositories (Multi-Repo)
+# ========================================
+
+# Ignore nested code repositories (they have their own .git)
+# Adjust paths based on your .ai-project.json structure
+backend/
+frontend/
+shared-types/
+api/
+mobile/
+desktop/
+
+# Common temporary code directories
+*_temp/
+*_old/
+
+# ========================================
+# Local MI6/Claude Configuration
+# ========================================
+
+# Local AI assistant settings (not shared across team)
+.claude/settings.local.json
+.cursor/settings.local.json
+
+# ========================================
+# Node.js (if using task-manager scripts)
+# ========================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ========================================
+# Build Artifacts
+# ========================================
+
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# ========================================
+# Environment Files
+# ========================================
+
+.env
+.env.local
+.env.*.local
+.envrc
+
+# ========================================
+# Temporary Files
+# ========================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ========================================
+# IDE and Editor
+# ========================================
+
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.sublime-*
+.project
+
+# ========================================
+# Logs
+# ========================================
+
+*.log
+logs/
+npm-debug.log*
+
+# ========================================
+# OS Files
+# ========================================
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================================
+# Test Results
+# ========================================
+
+test-results/
+playwright-report/
+coverage/
+
+# ========================================
+# Git Worktrees
+# ========================================
+
+# If using MI6 worktree workflow, worktrees live outside the docs repo
+# But if you have worktree metadata, ignore it:
+.worktrees/
+
+# ========================================
+# Project-Specific
+# ========================================
+
+# Add your project-specific ignores below:
+
+# Example: Ignore generated files
+# diagrams/*.png
+
+# Example: Ignore sensitive planning docs
+# confidential/

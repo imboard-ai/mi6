@@ -1,0 +1,23 @@
+{
+  "name": "project-docs",
+  "version": "1.0.0",
+  "description": "Project documentation and task management",
+  "private": true,
+  "scripts": {
+    "task:start": "node scripts/task-manager.js start",
+    "task:pause": "node scripts/task-manager.js pause",
+    "task:resume": "node scripts/task-manager.js resume",
+    "task:complete": "node scripts/task-manager.js complete",
+    "task:list": "node scripts/task-manager.js list",
+    "validate": "bash scripts/validate-structure.sh",
+    "benchmark": "bash scripts/benchmark-git-ops.sh"
+  },
+  "keywords": [
+    "documentation",
+    "task-management",
+    "mi6"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}
