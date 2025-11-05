@@ -1,704 +1,286 @@
 # MI6 Dossier Execution Protocol
 
-**Version**: 1.0
+**Version**: 1.0 (follows [Dossier Standard Protocol v1.0](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md))
 **Status**: Stable
-**Last Updated**: 2025-01-05
+**Last Updated**: 2025-11-05
 
 ---
 
 ## Overview
 
-This protocol defines **standard execution guidelines** for all MI6 dossiers. Every dossier references this protocol to ensure consistent, safe, and continuously improving automation.
+MI6 dossiers follow the **[Dossier Standard Protocol v1.0](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md)**, which defines standard execution guidelines for all dossiers.
 
-**Purpose**:
-- Provide meta-instructions that apply to ALL dossiers
-- Enable self-improving dossier system
-- Ensure safety and quality across all executions
-- Create consistent user experience
+> **📚 Full Protocol**: See the [Dossier Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md) for comprehensive execution guidelines, self-improvement system, safety guidelines, and validation patterns.
 
 ---
 
-## 🔄 Self-Improvement Protocol
+## Quick Reference
 
-**Key Insight**: Every dossier execution is an opportunity to improve the dossier itself.
+The Dossier Protocol v1.0 provides:
 
-**Default**: Enabled (users can skip with "just execute" or "skip improvements")
+### 🔄 Self-Improvement Protocol
+- Meta-analysis before execution
+- Context-aware improvement suggestions
+- User-driven enhancements
+- Continuous dossier improvement
 
-### Step 1: Meta-Analysis (Before Execution)
+**[Learn more →](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md#-self-improvement-protocol)**
 
-**Before executing any dossier, analyze it for potential improvements**:
+### 📋 Execution Guidelines
+- Transparency and safety principles
+- Standard execution flow
+- Context gathering best practices
+- Decision-making patterns
 
-**Review the dossier for**:
-- [ ] **Clarity**: Are instructions specific enough for this project's context?
-- [ ] **Completeness**: Missing edge cases you can anticipate from gathered context?
-- [ ] **Examples**: Could examples be more relevant to detected tech stack?
-- [ ] **Validation**: Are validation steps sufficient for this scenario?
-- [ ] **Troubleshooting**: Cover issues you can foresee?
-- [ ] **Decision trees**: Complete for the structure you detected?
-- [ ] **Specificity**: Are commands/paths explicit or too generic?
+**[Learn more →](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md#-standard-execution-guidelines)**
 
-### Step 2: Propose Improvements (If Found)
+### 🎨 Output Standards
+- Consistent emoji/icon usage
+- Progress reporting formats
+- Summary formats
 
-**If improvements identified**, present suggestion to user:
+**[Learn more →](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md#-output-format-standards)**
 
-**Standard format**:
-```
-🔄 Dossier Improvement Suggestion
+### 💾 Safety Guidelines
+- Backup creation
+- Destructive operation confirmation
+- Uncommitted changes checks
+- Rollback instructions
 
-**Dossier**: [dossier-name].md
-**Protocol Version**: [version]
+**[Learn more →](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md#-safety-guidelines)**
 
-**Context Triggering Improvement**:
-[What about this specific project revealed the gap]
+### ✅ Validation Patterns
+- File existence checks
+- JSON validation
+- Git status validation
+- Success criteria formats
 
-**Improvements Identified**:
-
-1. [Specific improvement]
-   - **Why needed**: [Reasoning based on current context]
-   - **Benefit**: [Concrete improvement this provides]
-   - **Example**: [Show what it would add]
-
-2. [Another improvement if multiple]
-   - **Why needed**: [Reasoning]
-   - **Benefit**: [Improvement]
-
-**Proposed Changes**:
-```markdown
-[Show diff or new sections to add to dossier]
-```
-
-**Benefits of Adopting**:
-- ✅ [Benefit 1: More specific/complete/safer]
-- ✅ [Benefit 2: Handles edge case X]
-- ✅ [Benefit 3: Better user experience]
-
-**Impact**: [Low/Medium/High] - How much better does this make the dossier?
-
-**Should I update the dossier before executing? (y/N)**
-```
-
-### Step 3: User Decision
-
-**User can respond**:
-- **"Yes" or "y"**: Update dossier, then execute improved version
-- **"No" or "n" or "Skip"**: Execute current version as-is
-- **"Iterate"**: Refine suggestion, propose again
-- **"Show diff"**: Display detailed before/after comparison
-- **"Just execute"** (anytime): Skip improvement check entirely
-
-### Step 4: Apply Improvement (If Accepted)
-
-**If user accepts**:
-1. Update dossier file at `$MI6_PATH/dossiers/[name].md`
-2. Show what changed (diff)
-3. If MI6-Operator: Offer to commit improvement
-4. If MI6-Citizen: Save locally or just use for this execution
-5. Proceed with improved version
-
-**If user declines**:
-1. Note suggestion for future reference
-2. Execute original version
-3. Continue normally
-
-### When to Skip Self-Improvement
-
-**Auto-skip if**:
-- User explicitly said "just execute"
-- Dossier was recently improved (within last execution)
-- Time-critical situation
-- User indicated urgency
-
-**Manual skip**:
-- User says "skip improvements"
-- User says "no suggestions"
+**[Learn more →](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md#-validation-patterns)**
 
 ---
 
-## 📋 Standard Execution Guidelines
+## MI6-Specific Extensions
 
-### General Principles
+The following extensions apply specifically to MI6 dossiers:
 
-1. **Transparency**: Show what you're doing at each step
-2. **Safety**: Validate before destructive operations
-3. **Clarity**: Clear success/failure messages
-4. **Adaptability**: Handle edge cases gracefully
-5. **User agency**: Ask before making significant decisions
+### Environment Variables
 
-### Execution Flow
-
-**Standard dossier execution sequence**:
-
-1. **Self-improvement check** (optional, see above)
-2. **Read prerequisites**: Validate all prerequisites met
-3. **Gather context**: Analyze project before making decisions
-4. **Present plan**: Show user what will happen
-5. **Execute actions**: Perform operations with progress updates
-6. **Validate results**: Verify success criteria met
-7. **Report outcome**: Clear summary of what was done
-8. **Next steps**: Guide user on what to do next
-
-### Context Gathering Best Practices
-
-**Always gather context before acting**:
-- Scan directory structure
-- Check for existing files (avoid conflicts)
-- Detect tech stack and tools
-- Verify git status
-- Understand project type
-- Note any unusual patterns
-
-**Report what you found**:
-```
-📊 Context Gathered:
-  Project Type: Multi-repo
-  Repos: backend/ (Node.js), frontend/ (React)
-  Git Status: Clean
-  Existing MI6: None
-```
-
-### Decision Making
-
-**When making decisions**:
-- Explain reasoning clearly
-- Present options when multiple paths exist
-- Recommend default but allow override
-- Document why recommendation is best for this context
-
-**Format**:
-```
-**Decision Point**: Which template to use?
-
-**Options**:
-  A. Single-repo template (best for: simple APIs, libraries)
-  B. Multi-repo template (best for: backend + frontend)
-  C. Monorepo template (best for: Nx/Turbo workspaces)
-
-**Detected**: Multiple repos found (backend/, frontend/)
-**Recommendation**: Multi-repo template (option B)
-
-**Proceeding with**: [wait for user or use recommendation]
-```
-
----
-
-## 🎨 Output Format Standards
-
-### Emojis/Icons
-
-**Use consistently across all dossiers**:
-- ✅ Success / completed step
-- ❌ Error / failed operation
-- ⚠️ Warning / requires attention
-- ℹ️ Information / FYI
-- 🔄 Self-improvement / suggestion
-- 📊 Status / summary
-- 📁 Directory / folder operation
-- 📦 Repository / package
-- 🔀 Git branch operation
-- 💾 File operation (write/copy)
-- 🧹 Cleanup / removal
-- 🚀 Start / launch
-- ⏸️ Pause / stash
-- 🎉 Complete / celebration
-- 🕵️ MI6 branding
-
-### Progress Reporting
-
-**Show clear progress**:
-```
-Step 1/5: Detecting project structure...
-  ✓ Found 2 git repositories
-  ✓ Detected: Multi-repo
-
-Step 2/5: Copying templates...
-  ✓ Copied .ai-project.json
-  ✓ Copied AI_GUIDE.md
-  ...
-```
-
-### Summary Format
-
-**Always end with clear summary**:
-```
-=========================
-✅ [Dossier Name] Complete!
-
-📊 Summary:
-  - Created: 5 files
-  - Modified: 2 files
-  - Repos configured: 3
-
-📝 Next Steps:
-  1. [Action user should take]
-  2. [Another action]
-
-💡 Tip: [Helpful suggestion]
-```
-
----
-
-## 💾 Safety Guidelines
-
-### Always Create Backups
-
-**Before destructive operations**:
+**Always use MI6 environment variables**:
 ```bash
-# Backup files before overwriting
-cp file.json file.json.pre-mi6
-
-# Create git backup branch
-git checkout -b backup-before-mi6
-git checkout -
-
-# Document backup location
-echo "✓ Backup created: file.json.pre-mi6"
+$MI6_PATH  # MI6 installation directory
 ```
 
-### Confirm Destructive Operations
-
-**Before deleting/overwriting**:
-```
-⚠️ About to delete:
-  - .worktrees/feature-x/
-  - 3 files, 127 KB
-
-Continue? (y/N)
-```
-
-**Always**:
-- Show exactly what will be affected
-- Explain consequences
-- Provide alternative options
-- Allow user to abort
-
-### Check for Uncommitted Changes
-
-**Before modifying git-tracked files**:
+**Example**:
 ```bash
-git status --short
-# If output not empty: warn user
+# ✅ Correct
+cat $MI6_PATH/dossiers/project-init.md
+
+# ❌ Incorrect
+cat /path/to/mi6/dossiers/project-init.md
 ```
 
-**Pattern**:
-```
-⚠️ Uncommitted changes detected:
-  M src/file.ts
-  ?? new-file.ts
+### Configuration Files
 
-Options:
-  1. Commit changes first (recommended)
-  2. Stash changes
-  3. Continue anyway (may cause conflicts)
-  4. Abort
+**MI6 dossiers interact with**:
+- `.ai-project.json` - Project configuration (multi-repo info)
+- `AI_GUIDE.md` - Project guidance for LLMs
+- `.aicontextignore` - Context filtering
+- `tasks/` - Task management structure
 
-What would you like to do?
-```
-
-### Validate Permissions
-
-**Before file operations**:
+**Example validation**:
 ```bash
-# Check write permission
-if [ ! -w "." ]; then
-  echo "❌ No write permission in current directory"
-  exit 1
-fi
-```
-
-### Provide Rollback Instructions
-
-**Always explain how to undo**:
-```
-If something goes wrong:
-  1. Restore from backup: cp file.json.pre-mi6 file.json
-  2. Or use git: git checkout backup-before-mi6
-  3. Or uninstall: Use project-uninstall.md dossier
-```
-
----
-
-## ✅ Validation Patterns
-
-### File Existence Validation
-
-**Standard pattern**:
-```bash
-# Check file exists
+# Check for MI6 project configuration
 if [ ! -f ".ai-project.json" ]; then
-  echo "❌ Required file not found: .ai-project.json"
+  echo "❌ Not an MI6 project (missing .ai-project.json)"
+  echo "💡 Run project-init dossier first"
   exit 1
 fi
-
-echo "✓ Found: .ai-project.json"
 ```
 
-### JSON Validation
+### Dossier Registry
 
-**Standard pattern**:
+**Update REGISTRY.md when creating new dossiers**:
+
+When you create a new MI6 dossier, add it to [REGISTRY.md](./REGISTRY.md):
+1. Add to Quick Reference table
+2. Document relationships with other dossiers
+3. List outputs produced
+4. Add to appropriate journey/workflow
+
+### Output Locations
+
+**Standard MI6 paths**:
 ```bash
-# Validate JSON syntax (try multiple parsers)
-if cat .ai-project.json | python3 -c "import json,sys; json.load(sys.stdin)" 2>/dev/null; then
-  echo "✓ Valid JSON"
-elif cat .ai-project.json | node -e "JSON.parse(require('fs').readFileSync('/dev/stdin'))" 2>/dev/null; then
-  echo "✓ Valid JSON"
+$MI6_PATH/dossiers/           # Dossier definitions
+$MI6_PATH/templates/          # File templates
+$MI6_PATH/scripts/            # Utility scripts
+$MI6_PATH/workflows/          # Documentation
+
+# Project-level paths
+.ai-project.json              # Project configuration
+AI_GUIDE.md                   # Project AI guide
+tasks/                        # Task management
+  planned/                    # Planned tasks
+  active/                     # Active tasks
+  completed/                  # Completed tasks
+.worktrees/                   # Feature worktrees
+```
+
+### Multi-Repo Awareness
+
+**MI6 dossiers should detect and handle**:
+- Single-repo projects
+- Multi-repo projects (from .ai-project.json)
+- Monorepo projects
+
+**Example context gathering**:
+```bash
+# Detect project structure
+if [ -f ".ai-project.json" ]; then
+  # Parse repository count
+  repo_count=$(cat .ai-project.json | grep -o '"path"' | wc -l)
+
+  if [ "$repo_count" -gt 1 ]; then
+    echo "✓ Multi-repo project detected ($repo_count repos)"
+  else
+    echo "✓ Single-repo project"
+  fi
 else
-  echo "❌ Invalid JSON in .ai-project.json"
-  exit 1
+  echo "⚠️  No .ai-project.json found"
+  echo "💡 This may not be an MI6 project yet"
 fi
 ```
 
-### Git Status Validation
+### Worktree Integration
 
-**Standard pattern**:
+**For dossiers working with worktrees**:
+- Check `.worktrees/` directory structure
+- Validate worktree branches match feature name
+- Ensure all repos in `.ai-project.json` have corresponding worktrees
+
+**Example**:
 ```bash
-# Check if git repo
-if ! git rev-parse --git-dir > /dev/null 2>&1; then
-  echo "❌ Not a git repository"
+# Validate worktree structure
+feature_name="$1"
+worktree_dir=".worktrees/$feature_name"
+
+if [ ! -d "$worktree_dir" ]; then
+  echo "❌ Worktree directory not found: $worktree_dir"
   exit 1
 fi
 
-echo "✓ Git repository detected"
-
-# Check branch
-branch=$(git branch --show-current)
-echo "✓ Current branch: $branch"
-```
-
-### Success Criteria Format
-
-**Standard checklist**:
-```markdown
-## Success Criteria
-
-1. ✅ [Criterion 1 - specific and measurable]
-2. ✅ [Criterion 2 - verifiable]
-3. ✅ [Criterion 3 - clear pass/fail]
-
-**Verification**:
-```bash
-# Commands to verify each criterion
-ls .ai-project.json  # Criterion 1
-npm run task:list    # Criterion 2
-git status           # Criterion 3
-```
+echo "✓ Worktree directory exists: $worktree_dir"
 ```
 
 ---
 
-## 🤖 LLM Execution Notes
+## Using This Protocol
 
-### For AI Agents Executing Dossiers
+### For LLM Agents Executing MI6 Dossiers
 
-**You should**:
-- ✅ Read _PROTOCOL.md before first execution (understand guidelines)
-- ✅ Perform self-improvement analysis (unless user skips)
-- ✅ Show progress at each step
-- ✅ Validate prerequisites before proceeding
-- ✅ Ask clarifying questions when ambiguous
-- ✅ Explain your decisions and reasoning
-- ✅ Handle errors gracefully with clear messages
-- ✅ Verify success criteria at end
-- ✅ Provide actionable next steps
+When executing MI6 dossiers:
 
-**You should NOT**:
-- ❌ Assume context without gathering
-- ❌ Make destructive changes without confirmation
-- ❌ Skip validation steps
-- ❌ Proceed if prerequisites not met
-- ❌ Hide errors or failures
-- ❌ Leave project in broken state
-- ❌ Forget to explain what you did
+1. **Read the standard protocol**
+   - Review [Dossier Protocol v1.0](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md)
+   - Follow all standard guidelines
 
-### Error Handling
+2. **Apply MI6-specific extensions**
+   - Use `$MI6_PATH` environment variable
+   - Check for `.ai-project.json`
+   - Follow MI6 conventions
 
-**When operations fail**:
-```
-❌ Error: [What failed]
+3. **Perform self-improvement analysis**
+   - Analyze dossier quality before execution
+   - Suggest improvements based on project context
+   - Allow user to accept/skip suggestions
 
-**Context**: [What you were trying to do]
-**Cause**: [Why it failed]
+4. **Execute with standard protocol**
+   - Gather context thoroughly
+   - Show progress clearly
+   - Validate results
+   - Report outcome
 
-**Solutions**:
-  1. [First thing to try]
-  2. [If that doesn't work]
-  3. [Escalation path]
-
-**Current state**: [What's the project state now]
-**Safe to retry**: [Yes/No]
-```
-
-### Progress Updates
-
-**For long operations, show progress**:
-```
-📦 Installing dependencies...
-  ✓ Backend: 247 packages installed (2.3s)
-  ✓ Frontend: 189 packages installed (1.8s)
-  ⏳ Shared: Installing... (15/32)
-```
-
----
-
-## 📚 Protocol Version History
-
-### v1.0 (2025-01-05) - Initial Release
-
-**Introduced**:
-- Self-improvement protocol
-- Standard execution guidelines
-- Output format standards
-- Validation patterns
-- Safety guidelines
-- LLM execution notes
-
-**Compatible dossiers**: All current MI6 dossiers
-
----
-
-### Future Versions
-
-**v1.1** (Planned - Minor update):
-- Enhanced troubleshooting patterns
-- Additional validation checks
-- Improved error messages
-- **Backwards compatible** with v1.0 dossiers
-
-**v2.0** (Planned - Breaking changes):
-- TBD based on learnings
-- Will require dossier updates
-- Separate protocol file for compatibility
-
----
-
-## 🎯 Using This Protocol
+5. **Verify MI6-specific success criteria**
+   - Check MI6 configuration files created/updated
+   - Validate against MI6 project structure
+   - Ensure compatibility with other MI6 dossiers
 
 ### For MI6-Operators (Dossier Authors)
 
-**When creating new dossiers**:
-1. Use `dossiers/templates/dossier-template.md`
-2. Reference protocol version in header
-3. Follow guidelines in this protocol
-4. Don't duplicate what's in protocol
+When creating MI6 dossiers:
 
-**When updating existing dossiers**:
-1. Add protocol version header if missing
-2. Optionally refactor to align with protocol
-3. Document any protocol deviations
+1. **Reference the protocol**
+   ```markdown
+   **Protocol Version**: 1.0 ([Dossier Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md))
+   ```
+
+2. **Follow standard structure**
+   - Use the [dossier template](https://github.com/imboard-ai/dossier/blob/main/templates/dossier-template.md)
+   - Include all required sections
+   - Add comprehensive examples
+
+3. **Apply MI6 conventions**
+   - Use `$MI6_PATH` in all paths
+   - Reference `.ai-project.json` when needed
+   - Update REGISTRY.md
+
+4. **Test thoroughly**
+   - Test in greenfield scenarios
+   - Test in brownfield scenarios
+   - Test with single and multi-repo projects
+   - Verify with multiple LLMs if possible
 
 ### For MI6-Citizens (Dossier Users)
 
-**When using dossiers**:
-1. Your AI agent reads this protocol automatically
-2. Self-improvement suggestions are optional
-3. You can skip improvement check with "just execute"
-4. Protocol ensures consistent safe execution
+When using MI6 dossiers:
 
-### For LLM Agents
+1. **Trust the self-improvement system**
+   - Review suggestions when offered
+   - Accept improvements that help your project
+   - Skip when in a hurry (totally fine!)
 
-**When executing dossiers**:
-1. Check protocol version in dossier header
-2. Read corresponding `_PROTOCOL.md` version
-3. Follow all guidelines in this document
-4. Perform self-improvement analysis (unless skipped)
-5. Execute dossier-specific instructions
-6. Validate according to protocol standards
+2. **Provide feedback**
+   - Report issues via GitHub
+   - Suggest improvements
+   - Share successful usage patterns
 
----
-
-## 🔧 Extending the Protocol
-
-### Contributing Improvements
-
-**To suggest protocol improvements**:
-1. Open issue on GitHub: `imboard-ai/mi6`
-2. Describe improvement and rationale
-3. Show impact on existing dossiers
-4. Propose version bump (minor vs major)
-
-**For breaking changes**:
-- Must increment to v2.0
-- Create `_PROTOCOL-v2.md`
-- Document migration path
-- Maintain v1.0 for backwards compatibility
-
-### Custom Protocol Extensions
-
-**Projects can create local protocol extensions**:
-```markdown
-# project/.mi6/LOCAL_PROTOCOL.md
-
-**Extends**: MI6 _PROTOCOL.md v1.0
-
-**Additional guidelines for this project**:
-- [Project-specific rules]
-- [Team conventions]
-- [Custom validation]
-```
-
-Reference in project's dossiers:
-```markdown
-**Protocol**: MI6 v1.0 + LOCAL v1.0
-```
+3. **Use natural language**
+   ```
+   "Use the project-init dossier to set up MI6"
+   "Run the worktree-cleanup dossier for feature-x"
+   ```
 
 ---
 
-## 📖 Examples
+## See Also
 
-### Example 1: Self-Improvement in Action
+### Dossier Standard
+- **[Dossier Protocol v1.0](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md)** - Complete protocol specification
+- **[Dossier Specification](https://github.com/imboard-ai/dossier/blob/main/SPECIFICATION.md)** - Formal dossier standard
+- **[Dossier Project](https://github.com/imboard-ai/dossier)** - Universal automation standard
 
-**User runs**:
-```
-"Use project-init dossier to set up this directory"
-```
-
-**LLM with protocol**:
-```
-[Reads project-init.md]
-[Sees: Protocol Version 1.0]
-[Reads _PROTOCOL.md]
-[Performs self-improvement analysis]
-
-🔄 Dossier Improvement Suggestion
-
-**Dossier**: project-init.md
-
-**Context**: Your project has Python virtual environment (venv/)
-but current dossier doesn't check for it.
-
-**Improvement Identified**:
-Add Python venv detection to "Context to Gather"
-
-**Why needed**: Python projects need venv activation check
-**Benefit**: Prevents pip install failures, better Python support
-
-**Proposed Addition**:
-In "Context to Gather" section, add:
----
-### Python Virtual Environment
-```bash
-if [ -d "venv" ] || [ -d ".venv" ]; then
-  echo "✓ Virtual environment detected"
-  # Note: User should activate venv before dependency install
-fi
-```
----
-
-**Should I update the dossier before executing? (y/N)**
-
-[User: "yes"]
-
-✓ Updated project-init.md with Python venv detection
-✓ Proceeding with improved version...
-
-[Executes project-init with enhancement]
-```
-
-### Example 2: Protocol Ensures Safety
-
-**Dossier about to delete files**:
-```
-[Following protocol safety guidelines]
-
-⚠️ About to remove:
-  📂 .worktrees/feature-x/ (3 repos, 1.2 MB)
-
-Checking for uncommitted changes... [per protocol]
-  ✓ Backend: Clean
-  ✓ Frontend: Clean
-  ⚠️ Shared: 2 uncommitted files
-
-❌ Cleanup aborted - uncommitted changes detected [per protocol]
-
-Options: [per protocol]
-  1. Commit changes first
-  2. Stash changes
-  3. Force remove (DATA LOSS)
-
-What would you like to do?
-```
+### MI6 Documentation
+- **[Dossiers README](./README.md)** - How to use MI6 dossiers
+- **[REGISTRY.md](./REGISTRY.md)** - Complete MI6 dossier catalog
+- **[Main README](../README.md)** - MI6 overview
+- **[CONTRIBUTING.md](../CONTRIBUTING.md)** - Contribute to MI6
 
 ---
 
-## 🔄 Protocol Versioning
+## Protocol Versioning
 
-### Version Numbers
+**Current**: MI6 follows Dossier Protocol v1.0
 
-**Format**: MAJOR.MINOR.PATCH (semver)
+**Compatibility**: All MI6 dossiers specify `Protocol Version: 1.0` in their metadata
 
-**Examples**:
-- `1.0.0` - Initial stable release
-- `1.1.0` - Added new guideline (compatible)
-- `1.0.1` - Fixed typo (compatible)
-- `2.0.0` - Breaking change (incompatible)
-
-### Compatibility
-
-**Dossiers specify protocol version**:
-```markdown
-**Protocol Version**: 1.0
-```
-
-**Meaning**:
-- Works with protocol v1.0.0 through v1.x.x
-- May not work with v2.0.0+ (breaking changes)
-
-**When protocol updates**:
-- **Minor/Patch (1.0 → 1.1)**: All dossiers benefit automatically
-- **Major (1.x → 2.0)**: Dossiers must be updated explicitly
+**Updates**: When the Dossier Protocol updates:
+- Minor updates (1.0 → 1.1): MI6 dossiers automatically benefit
+- Major updates (1.x → 2.0): MI6 dossiers must be updated explicitly
 
 ---
 
-## 🚀 Best Practices
-
-### For Dossier Authors
-
-1. ✅ Reference protocol version clearly
-2. ✅ Don't duplicate protocol content
-3. ✅ Focus on dossier-unique logic
-4. ✅ Follow output format standards
-5. ✅ Include examples
-6. ✅ Test self-improvement suggestions
-
-### For LLM Execution
-
-1. ✅ Read protocol before first execution
-2. ✅ Apply self-improvement analysis
-3. ✅ Follow safety guidelines
-4. ✅ Use standard output formats
-5. ✅ Validate thoroughly
-6. ✅ Report clearly
-
-### For Users
-
-1. ✅ Trust the self-improvement suggestions
-2. ✅ Provide feedback when protocol fails
-3. ✅ Skip improvements when in a hurry (that's okay!)
-4. ✅ Report protocol violations in dossiers
-
----
-
-## 📞 Support
-
-### Protocol Issues
-
-**If protocol seems wrong or insufficient**:
-- Open GitHub issue
-- Describe scenario where protocol failed
-- Suggest improvement
-- Tag as `protocol-improvement`
-
-### Dossier Not Following Protocol
-
-**If a dossier violates protocol**:
-- Open GitHub issue
-- Reference protocol section violated
-- Suggest fix
-- Tag as `protocol-violation`
-
----
-
-**🕵️ MI6 Dossier Execution Protocol v1.0**
+**🕵️ MI6 Dossier Execution Protocol**
 
 > "Structure your agents. Not your scripts."
 
-*This protocol ensures MI6 dossiers are safe, consistent, and continuously improving.*
+*This protocol ensures MI6 dossiers follow the universal [Dossier Standard](https://github.com/imboard-ai/dossier) while maintaining MI6-specific conventions.*

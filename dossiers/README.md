@@ -1,69 +1,31 @@
-# MI6 Dossiers: Agentic Automation
+# MI6 Dossiers: Implementation
 
-**Dossiers** are intelligent instruction sets that leverage LLM agents to automate complex MI6 workflows.
+**Dossiers** are intelligent instruction sets that leverage LLM agents to automate complex workflows. MI6 implements the [Dossier Standard](https://github.com/imboard-ai/dossier) for agentic automation.
 
 ---
 
 ## What Are Dossiers?
 
-Instead of writing complex scripts that try to handle every edge case, MI6 dossiers provide **clear instructions** that LLM agents (like Claude Code, GPT-4, Cursor, Copilot) can follow intelligently.
+> **New to dossiers?** See the [Dossier Project](https://github.com/imboard-ai/dossier) for a comprehensive introduction to the dossier concept, specification, and universal examples.
 
-### The Concept
-
-MI6 users **already have access to LLMs** - that's the whole point of this framework! So why write brittle shell scripts when we can provide structured guidance for intelligent agents?
-
-**Traditional Approach** (brittle):
-```bash
-# Complex script with 200+ lines
-# Must handle: all project types, all edge cases, all errors
-# Breaks when encountering unexpected setup
-./setup-wizard.sh
-```
-
-**Dossier Approach** (adaptive):
-```markdown
-# Clear instructions for intelligent agent
-# Agent adapts to actual project context
-# Handles edge cases naturally through understanding
-```
+MI6 uses dossiers to automate complex workflows like project initialization, worktree management, and task creation. Instead of brittle scripts, we provide clear instructions that LLM agents follow intelligently.
 
 ---
 
-## 🔄 Self-Improving Dossiers
+## 🔗 Dossier Standard
 
-MI6 dossiers follow the **Dossier Execution Protocol** (`_PROTOCOL.md`) which includes a **self-improvement system**.
+MI6 implements the **[Dossier Standard](https://github.com/imboard-ai/dossier)**, which provides:
 
-### How It Works
+- **[Specification](https://github.com/imboard-ai/dossier/blob/main/SPECIFICATION.md)** - Formal dossier standard
+- **[Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md)** - Execution guidelines & self-improvement system
+- **[Templates](https://github.com/imboard-ai/dossier/tree/main/templates)** - Standard dossier templates
+- **[Examples](https://github.com/imboard-ai/dossier/tree/main/examples)** - Universal examples (ML, DevOps, Database, Frontend)
 
-**Every dossier execution** is an opportunity to improve the dossier:
-
-1. **Before executing**: LLM analyzes dossier quality
-2. **Context-aware**: Identifies improvements based on YOUR project
-3. **Suggests enhancements**: Proposes specific additions/refinements
-4. **You decide**: Accept, iterate, or skip
-5. **Continuously improves**: Dossiers get better with each use
-
-**Example**:
-```
-User: "Use project-init dossier"
-
-LLM: 🔄 Improvement Suggestion
-     Your project has Python venv/ but dossier doesn't check for it.
-     Should I add Python virtual environment detection? (y/N)
-
-User: "yes"
-
-LLM: ✓ Enhanced dossier with Python support
-     ✓ Executing improved version...
-```
-
-**Protocol Version**: Each dossier specifies which protocol version it follows (e.g., v1.0)
-
-📚 **Full protocol**: [_PROTOCOL.md](./_PROTOCOL.md)
+**MI6 follows Protocol v1.0** - All MI6 dossiers reference the standard protocol for consistent execution.
 
 ---
 
-## How to Use Dossiers
+## How to Use MI6 Dossiers
 
 ### Method 1: Natural Language (Easiest)
 
@@ -91,7 +53,7 @@ to initialize this project"
 
 ---
 
-## Available Dossiers
+## Available MI6 Dossiers
 
 ### Citizen Journey Dossiers
 
@@ -117,9 +79,9 @@ to initialize this project"
 | **worktree-cleanup.md** | Remove worktrees safely | Completing/abandoning feature work |
 | **task-create.md** | Create new task document | Starting new work that needs documentation |
 
-### Community Dossiers
+### Complete Catalog
 
-Coming soon! See [CONTRIBUTING.md](../CONTRIBUTING.md) for how to contribute dossiers.
+See [REGISTRY.md](./REGISTRY.md) for the complete dossier catalog with relationships, outputs, and navigation maps.
 
 ---
 
@@ -152,73 +114,39 @@ MI6 uses **both** dossiers and traditional scripts - each for what they do best:
 
 ---
 
-## Dossier Structure
+## Creating Custom MI6 Dossiers
 
-Every dossier follows this format:
+### 1. Use the Standard Template
 
-```markdown
-# Dossier: [Name]
-
-## Objective
-Clear statement of what this accomplishes
-
-## Prerequisites
-What must exist before running this dossier
-
-## Context to Gather
-What the LLM should analyze in the project:
-- Directory structure
-- Existing files
-- Git repositories
-- Configuration files
-
-## Decision Points
-Key choices the LLM needs to make:
-- Which template to use
-- What values to set
-- How to handle edge cases
-
-## Actions to Perform
-Step-by-step instructions:
-1. Do X
-2. Do Y
-3. Do Z
-
-## Validation
-How to verify success:
-- Check file X exists
-- Verify Y is valid
-- Confirm Z works
-
-## Example
-Show what the expected result looks like
-
-## Troubleshooting
-Common issues and how to resolve them
-```
-
----
-
-## Creating Custom Dossiers
-
-### 1. Use the Template
-
-Start with the dossier template:
+Start with the dossier template from the [Dossier Project](https://github.com/imboard-ai/dossier/blob/main/templates/dossier-template.md):
 
 ```bash
+# Download template
+curl -o $MI6_PATH/dossiers/my-custom-dossier.md \
+  https://raw.githubusercontent.com/imboard-ai/dossier/main/templates/dossier-template.md
+
+# Or use local template if available
 cp $MI6_PATH/dossiers/templates/dossier-template.md \
    $MI6_PATH/dossiers/my-custom-dossier.md
 ```
 
-### 2. Follow the Format
+### 2. Follow the Dossier Standard
 
-Fill in all sections. Be specific and clear. The LLM will follow your instructions literally.
+Fill in all sections following the [Dossier Specification](https://github.com/imboard-ai/dossier/blob/main/SPECIFICATION.md). Be specific and clear. The LLM will follow your instructions literally.
 
-### 3. Test with an LLM
+### 3. Reference the Protocol
+
+Include protocol reference in your dossier metadata:
+
+```markdown
+**Protocol Version**: 1.0 ([Dossier Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md))
+```
+
+### 4. Test with an LLM
 
 Try your dossier with an AI assistant. Refine based on results.
 
-### 4. Contribute Back
+### 5. Contribute Back
 
 Share useful dossiers! See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
@@ -226,19 +154,20 @@ Share useful dossiers! See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ## Best Practices
 
+See the [Dossier Project Best Practices](https://github.com/imboard-ai/dossier#best-practices) for comprehensive guidelines.
+
+**MI6-Specific Additions**:
+
 ### ✅ Do:
-- **Be specific**: "Copy all .md files from tasks/active/" not "get the tasks"
-- **Show examples**: Include expected output samples
-- **Handle errors**: Include troubleshooting sections
-- **Validate results**: Always include validation steps
-- **Be LLM-agnostic**: Don't use Claude-specific features
+- **Use $MI6_PATH**: Reference MI6 environment variable in paths
+- **Check REGISTRY.md**: Ensure your dossier doesn't duplicate existing ones
+- **Follow MI6 conventions**: Use MI6's task structure, .ai-project.json, etc.
+- **Test in both greenfield and brownfield**: Ensure dossier works for both scenarios
 
 ### ❌ Don't:
-- **Assume context**: Explicitly state what to check
-- **Skip validation**: Always verify the outcome
-- **Be vague**: "Set up the project" → too broad
-- **Hardcode paths**: Use `$MI6_PATH` and relative paths
-- **Require specific LLM**: Should work with any AI
+- **Hardcode MI6 paths**: Always use `$MI6_PATH`
+- **Skip REGISTRY.md update**: Add your dossier to the registry
+- **Ignore existing dossiers**: Check if functionality already exists
 
 ---
 
@@ -311,6 +240,9 @@ Users see what the AI is doing and can guide the process, unlike opaque scripts.
 ### 5. **Community Extensible**
 Anyone can write a dossier - no shell scripting expertise required.
 
+### 6. **Universal Standard**
+MI6 implements a universal standard that works across projects and domains.
+
 ---
 
 ## Troubleshooting
@@ -351,20 +283,34 @@ If you don't have an LLM agent:
 
 ## See Also
 
-- [Dossier System Guide](../docs/dossier-system.md) - Comprehensive documentation
-- [Dossier Template](./templates/dossier-template.md) - Create custom dossiers
-- [CONTRIBUTING.md](../CONTRIBUTING.md) - Contribute dossiers
-- [MI6 Workflows](../workflows/) - Traditional documentation
+### Dossier Standard
+- **[Dossier Project](https://github.com/imboard-ai/dossier)** - Universal LLM automation standard
+- **[Specification](https://github.com/imboard-ai/dossier/blob/main/SPECIFICATION.md)** - Formal standard
+- **[Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md)** - Execution guidelines
+- **[Universal Examples](https://github.com/imboard-ai/dossier/tree/main/examples)** - ML, DevOps, Database, Frontend
+
+### MI6 Documentation
+- **[REGISTRY.md](./REGISTRY.md)** - Complete MI6 dossier catalog
+- **[Dossier System Guide](../docs/dossier-system.md)** - Comprehensive MI6 documentation
+- **[CONTRIBUTING.md](../CONTRIBUTING.md)** - Contribute dossiers
+- **[MI6 Workflows](../workflows/)** - Traditional documentation
 
 ---
 
 ## Philosophy
 
-> "Agents need structure. MI6 provides it."
+> "Agents need structure. Dossiers provide it."
 
 Dossiers embody this philosophy - they give AI agents clear structure and guidance, enabling them to intelligently automate complex workflows that would be brittle to script.
 
+**MI6's implementation** provides:
+- **Proven workflows** - Battle-tested dossiers for common MI6 tasks
+- **Universal standard** - Based on the open Dossier Standard
+- **Continuous improvement** - Self-improving through protocol
+- **Community extensible** - Anyone can contribute new dossiers
+
 ---
 
-**🕵️ MI6 Agentic Automation**
+**🕵️ MI6 Dossiers**
+*Implementation of the [Dossier Standard](https://github.com/imboard-ai/dossier)*
 *Simpler than scripts. More powerful than manual.*

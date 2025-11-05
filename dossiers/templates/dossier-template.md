@@ -1,6 +1,8 @@
 # Dossier: [Dossier Name]
 
-**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+> **Note**: This is MI6's implementation template based on the [Dossier Standard Template](https://github.com/imboard-ai/dossier/blob/main/templates/dossier-template.md) with MI6-specific extensions.
+
+**Protocol Version**: 1.0 ([Dossier Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md) + [MI6 Extensions](./_PROTOCOL.md))
 
 **Purpose**: [One sentence describing what this dossier accomplishes]
 
@@ -8,7 +10,7 @@
 
 ---
 
-*Before executing, optionally review `_PROTOCOL.md` for self-improvement protocol and execution guidelines.*
+*Before executing, optionally review the [Dossier Protocol](https://github.com/imboard-ai/dossier/blob/main/PROTOCOL.md) and [MI6 Extensions](./_PROTOCOL.md) for self-improvement protocol and execution guidelines.*
 
 ---
 
