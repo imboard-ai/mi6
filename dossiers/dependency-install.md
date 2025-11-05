@@ -1,5 +1,7 @@
 # Dossier: Dependency Installation
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Install all dependencies across multiple repositories automatically.
 
 **When to use**: After project initialization or when dependencies are out of sync.

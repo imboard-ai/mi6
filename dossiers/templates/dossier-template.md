@@ -1,8 +1,14 @@
 # Dossier: [Dossier Name]
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: [One sentence describing what this dossier accomplishes]
 
 **When to use**: [Describe the scenario when this dossier is helpful]
+
+---
+
+*Before executing, optionally review `_PROTOCOL.md` for self-improvement protocol and execution guidelines.*
 
 ---
 

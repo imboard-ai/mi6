@@ -1,5 +1,7 @@
 # Dossier: Worktree Cleanup
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Safely remove git worktrees when feature work is complete, cleaning up directories and branches.
 
 **When to use**: After merging feature branches, completing work in worktrees, or abandoning a feature.

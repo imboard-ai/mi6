@@ -29,6 +29,40 @@ MI6 users **already have access to LLMs** - that's the whole point of this frame
 
 ---
 
+## 🔄 Self-Improving Dossiers
+
+MI6 dossiers follow the **Dossier Execution Protocol** (`_PROTOCOL.md`) which includes a **self-improvement system**.
+
+### How It Works
+
+**Every dossier execution** is an opportunity to improve the dossier:
+
+1. **Before executing**: LLM analyzes dossier quality
+2. **Context-aware**: Identifies improvements based on YOUR project
+3. **Suggests enhancements**: Proposes specific additions/refinements
+4. **You decide**: Accept, iterate, or skip
+5. **Continuously improves**: Dossiers get better with each use
+
+**Example**:
+```
+User: "Use project-init dossier"
+
+LLM: 🔄 Improvement Suggestion
+     Your project has Python venv/ but dossier doesn't check for it.
+     Should I add Python virtual environment detection? (y/N)
+
+User: "yes"
+
+LLM: ✓ Enhanced dossier with Python support
+     ✓ Executing improved version...
+```
+
+**Protocol Version**: Each dossier specifies which protocol version it follows (e.g., v1.0)
+
+📚 **Full protocol**: [_PROTOCOL.md](./_PROTOCOL.md)
+
+---
+
 ## How to Use Dossiers
 
 ### Method 1: Natural Language (Easiest)

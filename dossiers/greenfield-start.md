@@ -1,5 +1,7 @@
 # Dossier: Greenfield Project Start
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Guide users through starting a brand new project from absolute zero with MI6.
 
 **When to use**: You have an idea for a new project but nothing exists yet - no directory, no code, nothing.

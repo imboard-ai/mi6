@@ -1,5 +1,7 @@
 # Dossier: Brownfield Adoption
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Safely integrate MI6 into an existing project without disrupting current workflows.
 
 **When to use**: You have an existing codebase and want to add MI6's task management, worktree workflows, and AI context control.

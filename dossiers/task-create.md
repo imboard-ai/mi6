@@ -1,5 +1,7 @@
 # Dossier: Task Creation
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Create a well-structured task document following MI6 patterns.
 
 **When to use**: Starting new work that needs documentation and tracking.

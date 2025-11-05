@@ -1,5 +1,7 @@
 # Dossier: Multi-Repo Worktree Setup
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Create linked git worktrees across multiple repositories for parallel feature development.
 
 **When to use**: Starting a feature that spans multiple repos (backend, frontend, shared libraries).

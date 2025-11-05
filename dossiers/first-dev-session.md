@@ -1,5 +1,7 @@
 # Dossier: First Development Session
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Guide users through their first productive development session after MI6 setup.
 
 **When to use**: Right after project initialization and dependency installation - ready to start coding!

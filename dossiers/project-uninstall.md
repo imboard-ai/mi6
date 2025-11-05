@@ -1,5 +1,7 @@
 # Dossier: Project Uninstall
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Cleanly remove MI6 from a project if adoption didn't work out.
 
 **When to use**: MI6 integration failed, doesn't fit your workflow, or you're switching to a different framework.

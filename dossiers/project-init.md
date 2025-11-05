@@ -1,6 +1,14 @@
 # Dossier: Project Initialization
 
+**Protocol Version**: 1.0 ([_PROTOCOL.md](./_PROTOCOL.md))
+
 **Purpose**: Initialize a new project with complete MI6 structure, intelligently customized for the specific project type and technology stack.
+
+---
+
+*Before executing, review `_PROTOCOL.md` for self-improvement protocol - you may identify enhancements based on this project's specific context.*
+
+---
 
 **When to use**: Starting a new project or adding MI6 to an existing project.
 
