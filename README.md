@@ -1,5 +1,8 @@
 # 🕵️‍♂️ MI6 — The Agent Organization for Developers
 
+[![Lint Status](https://github.com/imboard-ai/mi6/actions/workflows/lint.yml/badge.svg)](https://github.com/imboard-ai/mi6/actions/workflows/lint.yml)
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-blue.svg)](./LICENSE)
+
 **MI6** is an **open meta-framework for agent-driven development**, built and maintained by [ImBoard.ai](https://imboard.ai).
 
 It provides a reusable foundation for coordinating **human and AI agents** across multi-repository environments — enabling structure, context control, and automation in modern development workflows.
