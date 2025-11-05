@@ -8,6 +8,53 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- None (alternative entry point for existing projects)
+
+**Followed by**:
+- [project-init](./project-init.md) - Complete MI6 setup with merge mode (required)
+
+**Alternatives**:
+- [greenfield-start](./greenfield-start.md) - For new projects
+
+**Conflicts with**:
+- [greenfield-start](./greenfield-start.md) - Different starting points
+- [project-uninstall](./project-uninstall.md) - Opposite operation
+
+### Outputs
+
+**Files created**:
+- Backup files (.gitignore.pre-mi6, etc.)
+- Backup git branch (pre-mi6-backup)
+
+**State changes**:
+- Existing configs preserved
+- MI6 files merged/added
+
+### Inputs
+
+**Required**:
+- Existing project with code
+- Git repository
+
+### Coupling
+
+**Level**: Medium
+- Interacts with existing project structure
+- Must preserve existing files
+- Merger of old + new configs
+
+---
+
 ## Objective
 
 Add MI6 capabilities to an existing project while:

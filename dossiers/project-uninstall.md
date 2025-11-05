@@ -8,6 +8,55 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- Any failed MI6 adoption
+
+**Conflicts with**:
+- [project-init](./project-init.md) - Opposite operation
+- [greenfield-start](./greenfield-start.md) - Opposite operation
+- [brownfield-adoption](./brownfield-adoption.md) - Opposite operation
+- All setup dossiers
+
+### Outputs
+
+**Files removed**:
+- `.ai-project.json`
+- `AI_GUIDE.md`
+- `.aicontextignore`
+- `tasks/`
+- `scripts/task-manager.js`
+
+**Files created**:
+- Archived tasks in `archive/mi6-tasks-YYYYMMDD/`
+- Restored original configs (.gitignore, package.json)
+
+**State changes**:
+- MI6 removed from project
+- Original state restored
+
+### Inputs
+
+**Required**:
+- MI6 currently installed in project
+
+### Coupling
+
+**Level**: Medium
+- Must know about all MI6 files to remove
+- Preserves non-MI6 files
+- Reverses project-init operations
+
+---
+
 ## Objective
 
 Remove all MI6 components from the project while:

@@ -8,6 +8,44 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- [worktree-multi-repo](./worktree-multi-repo.md) - Creates worktrees to clean up (required)
+
+**Conflicts with**:
+- [worktree-multi-repo](./worktree-multi-repo.md) - Opposite operation
+
+### Outputs
+
+**Files removed**:
+- `.worktrees/[feature-name]/` - Removed directories
+
+**State changes**:
+- Git worktrees pruned
+- Feature branches optionally deleted
+
+### Inputs
+
+**Required**:
+- Existing worktree to remove
+- Feature name
+
+### Coupling
+
+**Level**: Medium
+- Depends on worktree structure created by worktree-multi-repo
+- Uses .ai-project.json for repo discovery
+
+---
+
 ## Objective
 
 Cleanly remove worktrees and optionally delete feature branches:

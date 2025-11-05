@@ -8,6 +8,52 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- [project-init](./project-init.md) - Needs .ai-project.json (required)
+
+**Followed by**:
+- [worktree-cleanup](./worktree-cleanup.md) - When feature complete (eventual)
+
+**Conflicts with**:
+- [worktree-cleanup](./worktree-cleanup.md) - Opposite operation (at same time)
+
+### Outputs
+
+**Files created**:
+- `.worktrees/[feature-name]/` - Worktree structure
+- Multiple git worktrees with branches
+
+**State changes**:
+- Git worktrees created for all repos
+- Feature branches created
+
+### Inputs
+
+**Required**:
+- `.ai-project.json` with repos array
+- Feature/branch name
+
+**From other dossiers**:
+- project-init → `.ai-project.json` (required)
+
+### Coupling
+
+**Level**: Medium
+- Tightly coupled to `.ai-project.json` schema
+- Reads repos configuration
+- Independent once created
+
+---
+
 ## Objective
 
 Create a coordinated worktree structure where:

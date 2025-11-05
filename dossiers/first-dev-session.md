@@ -8,6 +8,47 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- [dependency-install](./dependency-install.md) - Install deps first (suggested)
+- [project-init](./project-init.md) - MI6 setup (required)
+
+**Contains** (sub-dossiers):
+- [task-create](./task-create.md) - Creates first task
+
+### Outputs
+
+**Files created**:
+- First task in `tasks/active/`
+- First code changes
+- First commit
+
+**State changes**:
+- Development servers running
+- First task active
+
+### Inputs
+
+**Required**:
+- MI6 project initialized
+- Dependencies installed
+
+### Coupling
+
+**Level**: Loose
+- Uses task-create dossier as component
+- Otherwise independent walkthrough
+
+---
+
 ## Objective
 
 Get the user from "project is set up" to "actively developing" by:

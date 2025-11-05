@@ -8,6 +8,51 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- [project-init](./project-init.md) - Creates .ai-project.json (suggested)
+
+**Followed by**:
+- [first-dev-session](./first-dev-session.md) - Start development (suggested)
+
+**Can run in parallel with**:
+- [worktree-multi-repo](./worktree-multi-repo.md) - Independent operations
+
+### Outputs
+
+**Files created**:
+- `node_modules/` - Installed dependencies (per repo)
+- Lock files (package-lock.json, yarn.lock, etc.)
+
+**State changes**:
+- Dependencies installed for all repos
+- Ready for development
+
+### Inputs
+
+**Required**:
+- `.ai-project.json` with repos list (or can auto-detect)
+
+**From other dossiers**:
+- project-init → `.ai-project.json` (optional, can auto-detect)
+
+### Coupling
+
+**Level**: Loose
+- Can auto-detect repos without .ai-project.json
+- Uses config if available for efficiency
+- Graceful degradation if config missing
+
+---
+
 ## Objective
 
 Install all project dependencies by:

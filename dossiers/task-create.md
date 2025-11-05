@@ -8,6 +8,47 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- None (can run anytime after project-init)
+
+**Followed by**:
+- Task manager: `npm run task:start [TASK_NAME]`
+
+**Can run in parallel with**:
+- Most other dossiers (independent operation)
+
+**Used by** (as sub-dossier):
+- [first-dev-session](./first-dev-session.md) - Creates initial task
+
+### Outputs
+
+**Files created**:
+- Task document in `tasks/planned/` or `tasks/active/`
+
+### Inputs
+
+**Required**:
+- Task structure exists (`tasks/` directories)
+- Task concept/description
+
+### Coupling
+
+**Level**: Loose
+- Standalone operation
+- Only requires task folders to exist
+- No configuration dependencies
+
+---
+
 ## Objective
 
 Generate a comprehensive task document that:
