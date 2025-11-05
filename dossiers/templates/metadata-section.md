@@ -1,6 +1,8 @@
 # Dossier Metadata Section Template
 
-Use this template when adding metadata to dossiers.
+> **Note**: This follows the [Dossier Standard](https://github.com/imboard-ai/dossier/blob/main/SPECIFICATION.md#metadata) with MI6-specific extensions.
+
+Use this template when adding metadata to MI6 dossiers.
 
 ---
 

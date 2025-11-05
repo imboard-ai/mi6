@@ -106,11 +106,13 @@ curl -sSL https://raw.githubusercontent.com/imboard-ai/mi6/main/scripts/task-man
 
 ## 🤖 Agentic Automation (Dossiers)
 
-MI6 leverages the fact that users have access to LLM agents. Instead of complex scripts, MI6 provides **dossiers** - intelligent instruction sets that AI agents execute.
+MI6 implements the **[Dossier Standard](https://github.com/imboard-ai/dossier)** - a universal LLM automation standard. Instead of complex scripts, MI6 provides **dossiers** - intelligent instruction sets that AI agents execute.
 
 ### What Are Dossiers?
 
-Dossiers are structured markdown files that tell LLM agents (Claude, GPT-4, Cursor, Copilot) exactly how to automate complex tasks intelligently.
+> **New to dossiers?** See the [Dossier Project](https://github.com/imboard-ai/dossier) for a comprehensive introduction to the universal standard.
+
+Dossiers are structured markdown files that tell LLM agents (Claude, GPT-4, Cursor, Copilot) exactly how to automate complex tasks intelligently. MI6 provides a reference implementation with dossiers specifically designed for multi-repo project automation.
 
 **Example**:
 ```
@@ -160,6 +162,7 @@ $MI6_PATH/scripts/worktree/cleanup-worktree.sh my-feature
 - ✅ **Simpler**: Markdown instructions vs complex shell scripts
 - ✅ **Powerful**: Handles edge cases through intelligence
 - ✅ **Extensible**: Anyone can write dossiers
+- ✅ **Universal Standard**: Based on the open [Dossier Standard](https://github.com/imboard-ai/dossier)
 
 ---
 
