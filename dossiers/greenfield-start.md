@@ -8,6 +8,49 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- None (entry point for new projects)
+
+**Followed by**:
+- [project-init](./project-init.md) - Complete MI6 setup (required)
+
+**Alternatives**:
+- [brownfield-adoption](./brownfield-adoption.md) - If project already exists
+
+### Outputs
+
+**Files created**:
+- Project directory
+- `README.md` - Basic project readme
+
+**State changes**:
+- Git repositories initialized
+- Directory structure created
+
+### Inputs
+
+**Required**:
+- `$MI6_PATH` - MI6 installation
+- Project concept/idea
+
+### Coupling
+
+**Level**: Loose
+- Only creates directory and basic structure
+- No shared configuration files yet
+- Hands off cleanly to project-init
+
+---
+
 ## Objective
 
 Take a user from "I want to build X" to "I have a MI6-powered project ready to code" by:

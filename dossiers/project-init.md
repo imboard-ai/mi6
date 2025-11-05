@@ -10,6 +10,66 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: 2025-01-05
+
+### Relationships
+
+**Preceded by**:
+- [greenfield-start](./greenfield-start.md) - When starting from zero (optional)
+
+**Followed by**:
+- [dependency-install](./dependency-install.md) - Install dependencies (suggested)
+- [first-dev-session](./first-dev-session.md) - Start coding (suggested)
+
+**Alternatives**:
+- [brownfield-adoption](./brownfield-adoption.md) - For existing projects
+
+**Conflicts with**:
+- [project-uninstall](./project-uninstall.md) - Opposite operation
+
+### Outputs
+
+**Files created**:
+- `.ai-project.json` - Project configuration (required)
+- `AI_GUIDE.md` - AI assistant guide (required)
+- `.aicontextignore` - Context filtering (required)
+- `tasks/` - Task lifecycle structure (required)
+- `scripts/task-manager.js` - Task automation (required)
+
+**Configuration produced**:
+- `project.type` - Consumed by: worktree-multi-repo, dependency-install
+- `project.repos[]` - Consumed by: worktree-multi-repo, dependency-install
+
+**State changes**:
+- Git initialized (if wasn't already)
+- MI6 structure established
+
+### Inputs
+
+**Required**:
+- `$MI6_PATH` - MI6 installation path
+- Write permissions in current directory
+
+**Optional**:
+- `project_name` - Auto-detected from directory
+
+**From other dossiers**:
+- greenfield-start → `project_directory` (if used)
+
+### Coupling
+
+**Level**: Medium
+- Produces `.ai-project.json` consumed by multiple dossiers
+- Can run standalone (auto-detects if needed)
+- Output schema changes affect dependents
+
+---
+
 **When to use**: Starting a new project or adding MI6 to an existing project.
 
 ---
