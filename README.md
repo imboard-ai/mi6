@@ -21,18 +21,20 @@ Traditional development frameworks manage **code**.
 
 ---
 
-## 🧩 Repository Structure
+## 📂 Repository Structure
 
-```bash
-mi6/
-├── scripts/         # Reusable shell / Node utilities for setup, worktrees, and validation
-├── workflows/       # Shared operational blueprints (e.g., task lifecycle, release flow)
-├── prompts/         # Agent prompt templates for coding, reviews, debugging
-├── templates/       # Project scaffolds (.ai-project.json, AI_GUIDE.md, etc.)
-└── docs/            # Guides, best practices, and design philosophy
-```
+MI6 is organized into focused directories, each with comprehensive documentation:
 
-Each directory is designed to be cloned, copied, or imported into your own repos.
+| Directory | Purpose | Explore |
+|-----------|---------|---------|
+| **[scripts/](./scripts/)** | Shell & Node.js automation tools for fast, deterministic operations | [📖 README](./scripts/README.md) |
+| **[dossiers/](./dossiers/)** | LLM-guided intelligent automation with self-improving protocol | [📖 README](./dossiers/README.md) |
+| **[workflows/](./workflows/)** | Documented operational patterns and best practices | [📖 README](./workflows/README.md) |
+| **[templates/](./templates/)** | Project scaffolds and configuration templates | [📖 README](./templates/README.md) |
+| **[docs/](./docs/)** | Comprehensive guides, references, and philosophy | [📖 README](./docs/README.md) |
+| **[prompts/](./prompts/)** | AI assistant prompt library (planned) | [📖 README](./prompts/README.md) |
+
+💡 **Quick navigation**: Each directory contains a README explaining its contents, usage patterns, and integration with other MI6 components.
 
 ---
 
