@@ -12,6 +12,57 @@
 
 ---
 
+## 📋 Metadata
+
+### Version
+- **Dossier**: v1.0.0
+- **Protocol**: v1.0
+- **Last Updated**: YYYY-MM-DD
+
+### Relationships
+
+**Preceded by**:
+- [dossier-name](./dossier-name.md) - When/why (optional|required)
+
+**Followed by**:
+- [dossier-name](./dossier-name.md) - Purpose (suggested|required)
+
+**Alternatives**:
+- [dossier-name](./dossier-name.md) - When to use instead
+
+**Conflicts with**:
+- [dossier-name](./dossier-name.md) - Reason
+
+**Can run in parallel with**:
+- [dossier-name](./dossier-name.md) - If applicable
+- None (if must run alone)
+
+### Outputs
+
+**Files created**:
+- `path/to/file` - Description (required|optional)
+
+**Configuration produced**:
+- `config.key` - Consumed by: [dossiers]
+
+**State changes**:
+- State description - Affects: [what it impacts]
+
+### Inputs
+
+**Required**:
+- Input name - Description
+
+**Optional**:
+- Input name - Default behavior
+
+### Coupling
+
+**Level**: [Tight|Medium|Loose|None]
+**Details**: Brief explanation
+
+---
+
 ## Objective
 
 [Clear, specific statement of the goal. What should be true after executing this dossier?]
